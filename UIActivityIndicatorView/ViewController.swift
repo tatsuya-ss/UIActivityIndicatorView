@@ -16,7 +16,8 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchBar.delegate = self
+        setupSearchBar()
+        setupIndicator()
         stopIndicator()
     }
     
@@ -31,6 +32,16 @@ final class ViewController: UIViewController {
         activityIndicator.stopAnimating()
         view.alpha = 1.0
     }
+    
+    private func setupIndicator() {
+        activityIndicator.style = .large
+        activityIndicator.color = .systemYellow
+    }
+    
+    private func setupSearchBar() {
+        searchBar.delegate = self
+    }
+    
 }
 
 // MARK: -
